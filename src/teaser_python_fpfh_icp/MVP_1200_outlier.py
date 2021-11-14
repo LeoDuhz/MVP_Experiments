@@ -90,7 +90,7 @@ def registerOnce(source,target,num):
     else:
         tgt_cloud = pointcloud_read.complete
 
-    outlier_rate = 0.3
+    outlier_rate = 0.5
     cloud = o3d.geometry.PointCloud()
     transformed_cloud = o3d.geometry.PointCloud()
     point_arr = (copy.deepcopy(tgt_cloud[num,:,:].reshape(-1,3)))
@@ -240,7 +240,7 @@ def registerOnce(source,target,num):
     return err_rad_teaser,err_rad_icp,err_trans_teaser,err_trans_icp
 
 if __name__ == "__main__":
-    f = open("./f2f_outlier.txt", "w")
+    f = open("./outlier_txt/f2f_outlier_50.txt", "w")
     err_rad_t_all = 0
     err_rad_i_all = 0
     err_trans_t_all = 0

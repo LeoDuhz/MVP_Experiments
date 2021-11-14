@@ -1,7 +1,7 @@
 import pandas as pd
 
-type = "p22f"
-fileName = "./txt/"+type+".txt"
+type = "f2f_outlier_50"
+fileName = "./outlier_txt/"+type+".txt"
 f = open(fileName, 'r')
     
 allData = []
@@ -20,4 +20,4 @@ for i in range(1200):
 
 dataframe = pd.DataFrame({'err_rad':err_rad, 'err_trans':err_trans})
 
-dataframe.to_csv("./csv/"+type+".csv",index=False,sep=',')
+dataframe.to_csv("./outlier_csv/"+type+".csv",index=False,sep=',')

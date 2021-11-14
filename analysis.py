@@ -1,8 +1,8 @@
 import pandas as pd
 import csv
 
-type = "p22f"
-tips = pd.read_csv('./csv/'+type+'.csv')
+type = "f2f_outlier_50"
+tips = pd.read_csv('./outlier_csv/'+type+'.csv')
 
 rad = tips["err_rad"].values.tolist()
 trans = tips["err_trans"].values.tolist()
@@ -28,4 +28,4 @@ for i in range(len(rate)):
 frame = pd.DataFrame([err_rad,err_trans], columns=['0','0.05','0.25','0.5','0.75','0.95','1'])
 # print(frame)
 frame.index = ["Rotation[rad]", "Translation[m]"]
-frame.to_csv("./output/"+type+".csv")
+frame.to_csv("./outlier_output/"+type+".csv")
